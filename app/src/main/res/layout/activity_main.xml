@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f5f5f5"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="#d33333"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <TextView
+                android:id="@+id/tv_home_tt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="头条"
+                android:layout_marginStart="8dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_home_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2021-04-06"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2021年02月" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar_news"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="#d33333"
+            android:visibility="gone"
+            android:paddingRight="8dp">
+
+            <TextView
+                android:id="@+id/tv_back_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="回到日历"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#fff"
+                android:layout_marginEnd="16dp"
+                android:text="2020年11月18日 周二"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2020年11月18日 周二"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp">
+
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll"
+                    app:statusBarScrim="@android:color/transparent">
+
+                    <LinearLayout
+                        android:id="@+id/ll_card_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <CalendarView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:id="@+id/linear_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:text="first card"
+                                android:gravity="center"
+                                android:background="#ff00ff"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:text="second card"
+                                android:gravity="center"
+                                android:background="#d3d3d3"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:text="third card"
+                                android:gravity="center"
+                                android:background="#d33333" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/stl_home_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@color/white"
+                    app:tl_textSelectColor="#000000"
+                    app:tl_textUnselectColor="#333333"
+                    app:tl_indicator_width="16dp"
+                    app:tl_indicator_height="4dp"
+                    app:tl_tab_padding="12dp"
+                    app:tl_indicator_corner_radius="2dp"
+                    app:tl_underline_color="#F5F7FA"
+                    app:tl_underline_height="1dp"
+                    app:tl_textsize="16sp"
+                    app:tl_textBold="SELECT"
+                    app:tl_indicator_color="#d33333" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_home_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
