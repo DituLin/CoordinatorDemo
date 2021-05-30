@@ -1,13 +1,15 @@
 package com.ditu.coordinatordemo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isGone
-import androidx.fragment.app.Fragment
 import com.ditu.coordinatordemo.adapter.FragmentAdapter
 import com.ditu.coordinatordemo.databinding.ActivityMainBinding
 import com.ditu.coordinatordemo.event.EventHub
-import com.ditu.coordinatordemo.fragment.NewsFragment
+import com.ditu.coordinatordemo.ui.CoordinatorWitViewPagerActivity
+import com.ditu.coordinatordemo.ui.CoordinatorWithRecyclerViewActivity
+import com.ditu.coordinatordemo.ui.ScrollviewDemoActivity
 import com.google.android.material.appbar.AppBarLayout
 import org.simple.eventbus.EventBus
 
@@ -53,6 +55,14 @@ class MainActivity : AppCompatActivity() {
         binding.tvBackHome.setOnClickListener {
             EventBus.getDefault().post(true,EventHub.TAB_STATE)
             binding.appBar.setExpanded(true)
+        }
+
+
+        binding.tvHomeDate.setOnClickListener {
+            startActivity(Intent(this, CoordinatorWitViewPagerActivity::class.java))
+        }
+        binding.btnFirst.setOnClickListener {
+            startActivity(Intent(this, CoordinatorWithRecyclerViewActivity::class.java))
         }
     }
 

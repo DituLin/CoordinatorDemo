@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ScrollviewDemoActivity">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.scwang.smart.refresh.header.ClassicsHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#dddddd">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:background="#dddddd"
+                android:src="@mipmap/ic_launcher"/>
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/stl_scroll"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                app:tl_textSelectColor="#000000"
+                app:tl_textUnselectColor="#333333"
+                app:tl_indicator_width="16dp"
+                app:tl_indicator_height="4dp"
+                app:tl_tab_padding="12dp"
+                app:tl_tab_space_equal="true"
+                app:tl_indicator_corner_radius="2dp"
+                app:tl_underline_color="#F5F7FA"
+                app:tl_underline_height="1dp"
+                app:tl_textsize="16sp"
+                app:tl_textBold="SELECT"
+                app:tl_indicator_color="#d33333"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.ditu.coordinatordemo.widget.ViewPagerForScrollView
+                android:id="@+id/vp_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.scwang.smart.refresh.footer.ClassicsFooter
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize"
+    app:title="Scrollview"/>
+
+</FrameLayout>

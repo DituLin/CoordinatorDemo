@@ -122,6 +122,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/btn_first"
                                 android:layout_width="match_parent"
                                 android:layout_height="300dp"
                                 android:text="first card"
