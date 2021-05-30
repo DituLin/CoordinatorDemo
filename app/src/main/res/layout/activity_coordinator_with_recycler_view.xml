@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+        app:srlEnableRefresh="false"
         tools:context=".ui.CoordinatorWithRecyclerViewActivity">
 
         <com.scwang.smart.refresh.header.ClassicsHeader
@@ -27,6 +28,7 @@
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_behavior=".behavior.AppbarZoomBehavior"
                 android:fitsSystemWindows="true">
 
                 <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -36,6 +38,7 @@
                     app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                     <ImageView
+                        android:id="@+id/iv_img"
                         android:layout_width="match_parent"
                         android:layout_height="260dp"
                         android:background="@color/teal_200"
